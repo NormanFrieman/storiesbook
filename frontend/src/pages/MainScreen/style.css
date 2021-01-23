@@ -1,3 +1,90 @@
 .container{
     display: flex;
 }
+
+
+
+/*
+    CSS from the Profile section of the Feed
+*/
+.container .profileSection{
+    width: 20%;
+    background: linear-gradient(#E3DDF9, #E8DEF9, #E3DDF9);
+    height: 100vh;
+}
+
+.container .profileSection .profileStoriesbook{
+    margin-left: 24px;
+    width: 100px;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+}
+
+.container .profileSection .profileStoriesbook .logo{
+    font-size: 32px;
+    margin-right: 12px;
+    color: #6a12a8;
+    display: flex;
+    align-items: center;
+}
+
+.container .profileSection .profileStoriesbook p{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.container .profileSection .profileImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .profileSection .profileImg .profileNames{
+    display: block;
+}
+
+.container .profileSection .profileImg .profileNames .title{
+    font-weight: bold;
+}
+
+.container .profileSection .profileImg .profileNames .info{
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: -12px;
+}
+
+.container .profileSection .profileImg img{
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/*
+    CSS from the Featured section of the Feed
+*/
+.container .featuredSection{
+    width: 25%;
+    padding: 12px 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .featuredSection .pHeader{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+/*
+    CSS from the Story section of the Feed
+*/
+.container .storySection{
+    width: 55%;
+    padding: 12px 24px;
+    background-color: royalblue;
+}

@@ -1,12 +1,12 @@
 .featured{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .featured img{
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     margin: 20px;
 }
 

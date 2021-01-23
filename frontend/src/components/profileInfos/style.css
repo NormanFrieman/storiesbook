@@ -1,4 +1,6 @@
 .profileInfos{
+    padding: 0px 24px;
+    margin: 40px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,4 +12,8 @@
 
 .profileInfos .setupInfos .title{
     font-weight: bold;
+}
+
+.profileInfos .setupInfos .info{
+    color: rgba(0, 0, 0, 0.5);
 }
