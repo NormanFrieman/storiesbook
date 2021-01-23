@@ -1,0 +1,13 @@
+.profileInfos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profileInfos .setupInfos{
+    text-align: center;
+}
+
+.profileInfos .setupInfos .title{
+    font-weight: bold;
+}
