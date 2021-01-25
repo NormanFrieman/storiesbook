@@ -1,5 +1,5 @@
-import React from "react";
-import { FiPocket, FiHome, FiUsers, FiSettings, FiLogOut } from "react-icons/fi";
+import React, { useState } from "react";
+import { FiPocket, FiHome, FiUsers, FiSettings, FiLogOut, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import "./style.css";
 
@@ -11,6 +11,8 @@ import Featured from "../../components/featured/featured";
 import userAvatar from "../../assets/user_avatar.svg";
 
 export default function MainScreen(){
+    const [storyIndex, setStoryIndex] = useState(0);
+
     const info = {
         posts: 12,
         followers: 3500,
@@ -36,6 +38,34 @@ export default function MainScreen(){
             title: "google"
         }
     ];
+
+    const story = [
+        {
+            title: "user",
+            url: userAvatar,
+            new: "story",
+            date: "15:26"
+        },
+        {
+            title: "instagram",
+            url: "https://imagens.canaltech.com.br/empresas/638.400.jpg",
+            new: "story",
+            date: "17:26"
+        }
+    ];
+
+    function updateStoryIndex(value){
+        if(storyIndex === 0 && value === -1){
+            setStoryIndex(story.length - 1);
+            return;
+        }
+        if(storyIndex+1 === story.length && value === 1){
+            setStoryIndex(0);
+            return;
+        }
+        
+        setStoryIndex(storyIndex + value);
+    };
 
     return(
         <div className="container">
@@ -66,7 +96,15 @@ export default function MainScreen(){
                 ))}
             </div>
             <div className="storySection">
-
+                <div className="storySection-header">
+                    <p className="title">{story[storyIndex].title}</p>
+                    <p>Publicado em {story[storyIndex].date}</p>
+                </div>
+                <div className="storySection-story">
+                    <p onClick={() => updateStoryIndex(-1)}><FiChevronLeft /></p>
+                    <img src={story[storyIndex].url} new={story[storyIndex].new} />
+                    <p onClick={() => updateStoryIndex(1)}><FiChevronRight /></p>
+                </div>
             </div>
         </div>
     );
