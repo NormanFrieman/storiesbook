@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { FiPocket } from "react-icons/fi";
 
@@ -7,6 +8,11 @@ import "./style.css";
 export default function Login(){
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
+    const history = useHistory();
+
+    function changePage(page){
+        history.push(`/${page}`);
+    };
 
     return(
         <div className="container">
@@ -40,9 +46,9 @@ export default function Login(){
                         <label for="yes">Keep me logged in</label>
                     </div>
                     <div>
-                        <button type="submit">Log In</button>
+                        <button type="submit" onClick={() => changePage("feed")}>Log In</button>
                     </div>
-                    <p><span className="newAccount">Don't have an account?</span> <span className="goSignUp">Sign up</span></p>
+                    <p><span className="newAccount">Don't have an account?</span> <span className="goSignUp" onClick={() => changePage("register")}>Sign up</span></p>
                 </form>
             </div>
         </div>

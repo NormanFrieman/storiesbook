@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { FiPocket, FiHome, FiLogOut, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import "./style.css";
@@ -14,6 +15,11 @@ import plusCircle from "../../assets/plus-circle.svg";
 
 export default function MainScreen(){
     const [storyIndex, setStoryIndex] = useState(0);
+    const history = useHistory();
+
+    function changePage(page){
+        history.push(`/${page}`);
+    };
 
     const user = {
         name: "Norman Frieman",
@@ -92,7 +98,9 @@ export default function MainScreen(){
                 </div>
                 <ProfileInfos posts={user.info.posts} followers={user.info.followers} following={user.info.following} />
                 <ProfileOptions name="Feed" feather={FiHome} activate="activate" />
-                <ProfileOptions name="Logout" feather={FiLogOut} />
+                <div onClick={() => changePage("")}>
+                    <ProfileOptions name="Logout" feather={FiLogOut} />
+                </div>
             </div>
             <div className="featuredSection">
                 <p className="pHeader">New Story</p>

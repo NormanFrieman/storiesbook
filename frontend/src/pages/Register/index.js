@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { FiPocket, FiEye, FiEyeOff } from "react-icons/fi";
 
@@ -11,6 +12,11 @@ export default function Register(){
     const [eye, setEye] = useState(
         <FiEye />
     );
+    const history = useHistory();
+
+    function changePage(page){
+        history.push(`/${page}`);
+    };
 
     function changeEye(info){
         if(info.type.name === "FiEye"){
@@ -58,7 +64,7 @@ export default function Register(){
                         <button type="submit">Sign Up</button>
                     </div>
                     <p><span className="newAccount">By signing up, you agree to our</span> <span className="goSignUp">Terms & Conditions</span></p>
-                    <p><span className="newAccount">Already have an account?</span> <span className="goSignUp">Log In</span></p>
+                    <p><span className="newAccount">Already have an account?</span> <span className="goSignUp" onClick={() => changePage("")}>Log In</span></p>
                 </form>
             </div>
         </div>
