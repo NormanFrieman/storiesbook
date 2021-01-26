@@ -1,8 +1,5 @@
 # Storiesbook
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-
 <img src="frontend/src/assets/loginscreen.png" alt="storiesbook login">
 
 > Storiesbook on a platform that allows you to post photos that are visible for 24 hours, and can be seen by all users.
