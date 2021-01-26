@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: left;
+    cursor: pointer;
+    margin-bottom: 12px;
 }
 
 .featured img{

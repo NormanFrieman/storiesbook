@@ -67,6 +67,10 @@ export default function MainScreen(){
         setStoryIndex(storyIndex + value);
     };
 
+    function showStory(value){
+        setStoryIndex(value - 1);
+    };
+
     return(
         <div className="container">
             <div className="profileSection">
@@ -90,7 +94,7 @@ export default function MainScreen(){
             <div className="featuredSection">
                 <p className="pHeader">Featured Stories</p>
                 {stories.map(story => (
-                    <div key={story.key}>
+                    <div key={story.key} onClick={() => showStory(story.key)}>
                         <Featured url={story.url} new={story.new} title={story.title} info="stories" />
                     </div>
                 ))}
