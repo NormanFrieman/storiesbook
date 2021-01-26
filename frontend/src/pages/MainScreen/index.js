@@ -15,15 +15,15 @@ import plusCircle from "../../assets/plus-circle.svg";
 export default function MainScreen(){
     const [storyIndex, setStoryIndex] = useState(0);
 
-    const info = {
-        posts: 12,
-        followers: 3500,
-        following: 1278
-    };
     const user = {
         name: "Norman Frieman",
         nickname: "normanfrieman",
-        url: userAvatar
+        url: userAvatar,
+        info: {
+            posts: 12,
+            followers: 3500,
+            following: 1278
+        }
     };
 
     const stories = [
@@ -45,13 +45,11 @@ export default function MainScreen(){
         {
             title: "user",
             url: userAvatar,
-            new: "story",
             date: "15:26"
         },
         {
             title: "instagram",
             url: "https://imagens.canaltech.com.br/empresas/638.400.jpg",
-            new: "story",
             date: "17:26"
         }
     ];
@@ -92,7 +90,7 @@ export default function MainScreen(){
                         <p className="info">{user.nickname}</p>
                     </div>
                 </div>
-                <ProfileInfos posts={info.posts} followers={info.followers} following={info.following} />
+                <ProfileInfos posts={user.info.posts} followers={user.info.followers} following={user.info.following} />
                 <ProfileOptions name="Feed" feather={FiHome} activate="activate" />
                 <ProfileOptions name="Logout" feather={FiLogOut} />
             </div>
@@ -111,7 +109,7 @@ export default function MainScreen(){
                     <div key={story.key} onClick={() => showStory(story.key)}>
                         <Featured
                             url={story.url}
-                            new={story.new}
+                            new={"story"}
                             title={story.title}
                             info="stories"
                         />
