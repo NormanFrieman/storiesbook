@@ -45,9 +45,6 @@ export default function Login(){
                     <p><span className="newAccount">Don't have an account?</span> <span className="goSignUp">Sign up</span></p>
                 </form>
             </div>
-            <div className="presentation">
-                <h1>Picture here</h1>
-            </div>
         </div>
     );
 }

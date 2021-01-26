@@ -1,0 +1,78 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*
+    CSS from the Register section
+*/
+.container .register{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .register header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .register header .logo{
+    font-size: 32px;
+    margin-right: 12px;
+    color: #6a12a8;
+    display: flex;
+    align-items: center;
+}
+
+.container .register header p{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.container .register h1{
+    margin-bottom: 60px;
+}
+
+.container .register p{
+    color: #8b8f91;
+}
+
+.container .register input{
+    font-size: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: rgba(161, 161, 161, 0.15);
+    margin-bottom: 32px;
+}
+
+.container .register .divPass{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.container .register .divPass .forget{
+    margin: 0px;
+    color: #6a12a8;
+    cursor: pointer;
+}
+
+.container .register .newAccount{
+    color: #4e4e4e;
+    font-weight: bold;
+}
+
+.container .register .goSignUp{
+    color: #6a12a8;
+}

@@ -7,10 +7,10 @@
 
 
 /*
-    CSS from the Login section of the Login
+    CSS from the Login section
 */
 .container .login{
-    width: 50%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,6 +46,7 @@
 }
 
 .container .login input{
+    font-size: 20px;
     border-style: solid;
     border-width: 2px;
     border-top-color: transparent;
@@ -76,15 +77,4 @@
 
 .container .login .goSignUp{
     color: #6a12a8;
-}
-
-
-
-/*
-    CSS from the Presentation section of the Login
-*/
-.container .presentation{
-    text-align: center;
-    background: red;
-    width: 50%;
 }
