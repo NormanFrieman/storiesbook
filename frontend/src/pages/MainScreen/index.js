@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FiPocket, FiHome, FiUsers, FiSettings, FiLogOut, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiPocket, FiHome, FiLogOut, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import "./style.css";
 
@@ -7,8 +7,10 @@ import ProfileOptions from "../../components/profileOptions/profileOptions";
 import ProfileInfos from "../../components/profileInfos/profileInfos";
 
 import Featured from "../../components/featured/featured";
+import NewStory from "../../components/newStory/newStory";
 
 import userAvatar from "../../assets/user_avatar.svg";
+import plusCircle from "../../assets/plus-circle.svg";
 
 export default function MainScreen(){
     const [storyIndex, setStoryIndex] = useState(0);
@@ -71,8 +73,13 @@ export default function MainScreen(){
         setStoryIndex(value - 1);
     };
 
+    function openWindow(){
+        document.querySelector(".offBackground").style.display = "block";
+    };
+
     return(
         <div className="container">
+            <NewStory />
             <div className="profileSection">
                 <div className="profileStoriesbook">
                     <p className="logo"><FiPocket/></p>
@@ -87,15 +94,27 @@ export default function MainScreen(){
                 </div>
                 <ProfileInfos posts={info.posts} followers={info.followers} following={info.following} />
                 <ProfileOptions name="Feed" feather={FiHome} activate="activate" />
-                <ProfileOptions name="People" feather={FiUsers} />
-                <ProfileOptions name="Settings" feather={FiSettings} />
                 <ProfileOptions name="Logout" feather={FiLogOut} />
             </div>
             <div className="featuredSection">
+                <p className="pHeader">New Story</p>
+                <div onClick={() => openWindow()}>
+                    <Featured
+                        url={plusCircle}
+                        new="new story"
+                        title="Create a new story"
+                        info=""
+                    />
+                </div>
                 <p className="pHeader">Featured Stories</p>
                 {stories.map(story => (
                     <div key={story.key} onClick={() => showStory(story.key)}>
-                        <Featured url={story.url} new={story.new} title={story.title} info="stories" />
+                        <Featured
+                            url={story.url}
+                            new={story.new}
+                            title={story.title}
+                            info="stories"
+                        />
                     </div>
                 ))}
             </div>
