@@ -61,7 +61,7 @@ export default function Register(){
                         <p onClick={() => changeEye(eye)} className="forget">{eye}</p>
                     </div>
                     <div>
-                        <button type="submit">Sign Up</button>
+                        <button id="btnLogSign" type="submit">Sign Up</button>
                     </div>
                     <p><span className="newAccount">By signing up, you agree to our</span> <span className="goSignUp">Terms & Conditions</span></p>
                     <p><span className="newAccount">Already have an account?</span> <span className="goSignUp" onClick={() => changePage("")}>Log In</span></p>

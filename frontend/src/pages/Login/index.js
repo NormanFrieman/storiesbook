@@ -46,7 +46,7 @@ export default function Login(){
                         <label for="yes">Keep me logged in</label>
                     </div>
                     <div>
-                        <button type="submit" onClick={() => changePage("feed")}>Log In</button>
+                        <button id="btnLogSign" type="submit" onClick={() => changePage("feed")}>Log In</button>
                     </div>
                     <p><span className="newAccount">Don't have an account?</span> <span className="goSignUp" onClick={() => changePage("register")}>Sign up</span></p>
                 </form>
