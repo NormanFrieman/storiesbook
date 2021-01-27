@@ -24,4 +24,8 @@ Route.get('/', async () => {
   return { hello: 'world' }
 });
 
+Route.get('heath', 'VerifiesController.database');
+
 Route.get('users', 'UsersController.list');
+Route.post('insert', 'UsersController.insert');
+Route.delete('delete', 'UsersController.delete');
