@@ -1,57 +1,35 @@
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-import Database from "@ioc:Adonis/Lucid/Database";
+import { msgStatus } from "../../../src/Interfaces";
+import { User } from "../../../src/Class/User";
 
 export default class UsersController {
     public async list () {
-        const users = Database.query().select("*").from("users");
+        const users = new User();
 
-        return users;
+        return users.list();
     };
     
-    public async insert ({ response }) {
-        let condition: boolean = false;
+    public async insert ({ request, response }) {
+        const user = new User();
 
-        await Database
-            .insertQuery()
-            .table("users")
-            .insert({
-                name: "NormanFrieman",
-                email: "normanfrieman@email.com",
-                password: "1234"
-            })
-            .then(() => {
-                console.log("User successfully registered");
-                condition = true;
-            })
-            .catch(() => {
-                console.log("Unregistered user");
-            });
-        
-        if(!condition)
-            return response.status(401).json({ msg: "Unregistered user" });
-        
-        return response.status(200).json({ msg: "User successfully registered" });
+        const req = request.requestBody;
+
+        user.name = req.name;
+        user.email = req.email;
+        user.password = req.email;
+
+        const result: msgStatus = await user.insert();
+                
+        return response.status(result.status).json({ msg: result.msg });
     };
 
-    public async delete ({ response }) {
-        let condition: boolean = false;
+    public async delete ({ request, response }) {
+        const user = new User();
 
-        await Database
-            .from("users")
-            .where("email", "normanfrieman@email.com")
-            .delete()
-            .then(() => {
-                console.log("User successfully deleted");
-                condition = true;
-            })
-            .catch(() => {
-                console.log("User not deleted");
-            });
-        
-        if(!condition)
-            return response.status(401).json({ msg: "User not deleted" });
-        
-        return response.status(200).json({ msg: "User successfully deleted" });
+        const req = request.requestBody;
+        const result: msgStatus = await user.delete(req.email);
+                
+        return response.status(result.status).json({ msg: result.msg });
     };
 };
