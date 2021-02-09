@@ -1,11 +1,13 @@
 import { Request, Response } from "express";
 
-import { UploadImage } from '../../commands/uploadImage';
+import { Controller } from '../../protocols/controller';
 
-export class CreateStory{
+export class CreateStory implements Controller{
+    constructor(
+        private readonly uploadImage: Function
+    ){}
+
     async handle(req: Request, res: Response){
-        const uploadImage = new UploadImage();
-
-        return await uploadImage.upload(req, res);
+        return await this.uploadImage(req, res);
     };
 }

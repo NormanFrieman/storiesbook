@@ -1,10 +1,12 @@
 import express from 'express';
 
-import { CreateStory } from './controllers/CreateStory';
+import { adaptRoute } from './adapters/expressRouteAdapter';
+
+import { makeCreateStory, makeSignUpUser } from './generator/controllers';
 
 const routes = express.Router();
 
-const createStory = new CreateStory();
-routes.post('/createStory', (req, res) => createStory.handle(req, res));
+routes.post('/createStory', adaptRoute(makeCreateStory()));
+routes.post('/insert', adaptRoute(makeSignUpUser()));
 
 export default routes;
