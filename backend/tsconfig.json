@@ -1,11 +1,13 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist",
-        "module": "commonjs",
-        "target": "es2019",
-        "esModuleInterop": true,
-        "allowJs": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-    }
+   "compilerOptions": {
+      "target": "es2019",
+      "esModuleInterop": true,
+      "allowJs": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./build",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true
+   }
 }

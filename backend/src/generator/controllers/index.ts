@@ -1,2 +1,3 @@
-export * from './createStoryControllerFactory';
-export * from './signUpControllerFactory';
+export * from './createStoryController';
+export * from './signUpController';
+export * from './listUsersController';

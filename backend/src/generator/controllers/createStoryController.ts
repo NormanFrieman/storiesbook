@@ -1,4 +1,4 @@
-import { uploadImage } from '../../commands/uploadImage';
+import { uploadImage } from '../../commands/images/uploadImage';
 
 import { Controller } from '../../protocols';
 

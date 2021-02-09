@@ -1,16 +1,8 @@
-import express from 'express';
-import cors from 'cors'
+import "reflect-metadata";
+import {createConnection} from "typeorm";
 
-import routes from './routes';
+import { server } from './server';
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(cors());
-app.use(express.json());
-app.use(express.static('public'));
-app.use(routes);
-
-app.listen(PORT, () => {
-    console.log(`[server] Listening to port ${PORT}`);
-});
+createConnection().then(async () => {
+    server();
+}).catch(error => console.log(error));
