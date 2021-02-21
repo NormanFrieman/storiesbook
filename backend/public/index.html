@@ -2,26 +2,12 @@
 <html>
 <body>
     <form id="form" enctype="multipart/form-data">
-        <input type="file" name="avatar" />
+        <input type="file" accept="image/png, image/jpeg" name="avatar" />
         <br/>
         <button type="submit" name="upload">Upload</button>
         <br/>
         <img id="avatar">
     </form>
 
-    <script>
-        form.addEventListener('submit', event => {
-            event.preventDefault();
-            let formData = new FormData();
-            formData.append('avatar', event.target[0].files[0]);
-            fetch('http://localhost:3000/createStory', { method: 'post', body: formData })
-                .then(res => res.json())
-                .then(res => {
-                    avatar.src = `http://localhost:3000${res.payload.url}`;
-                    console.log(avatar.src);
-                    console.log(res.payload)
-                })
-                .catch(console.log);
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
